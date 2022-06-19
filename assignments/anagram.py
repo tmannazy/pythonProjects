@@ -8,7 +8,7 @@ def is_anagram(number):
     length_of_number = len(str(number)) * (-1)
     power_of_number_in_str = str(int(math.pow(number, 2)))
     get_value_of_power = power_of_number_in_str[length_of_number:]
-    if str(number) == get_value_of_power:
+    if str(number).i == get_value_of_power:
         return True, str(number) + " is an Anagram"
     else:
         return False, str(number) + " is not an Anagram"
