@@ -41,47 +41,15 @@ def calculate_students_results(lst_scores):
 
 
 print(f"{'STUDENT(S) GRADE REPORT SHEET':^60s}")
-
 display_lines("|")
 print()
-print(f"{'STUDENT':>10}", end="")
-print(f"{' '.join(['{:>7s}'.format(x) for x in lst_of_courses]):>8}", end="")
-print(f"{'TOTAL':>10} {'POS':>6}")
+print(f"{'STUDENT':>8}", end="")
+print(f"{' '.join(['{:^7s}'.format(x) for x in lst_of_courses]):^8}", end="")
+print(f"{'TOTAL':^10} {'POS':^6}")
 display_lines("|")
 print()
 
 for i in range(len(lst_of_students_names)):
-    print('{:>7s} {:>6d} {:>7d} {:>8d}'.format(lst_of_students_names[i].title(), *students_records[i],
-                                               calculate_students_results(students_records)[i]))
-
-print(calculate_students_results(students_records))
-
-# print(students_records[i], end="")
-# print(calculate_results(students_records, lst_of_students_names))
-
-# print(enter_students_details())
-
-# def sum_student_scores(lst, index) -> int:
-#     sum_ = 0
-#     for sum_scores in lst[index]:
-#         sum_ += sum_scores
-#     return sum_
-#
-#
-# avg = sum_student_scores(students_records, 0) / len(students_records[0])
-
-
-# print("Students list", lst_of_students_names)
-# print("Course list", lst_of_courses)
-# print("Scores of students", students_records)
-# print(sum_student_scores(students_records, 0))
-
-
-# lst_of_students_names = [input(f"Enter name of student {i + 1}: ") for i in range(0, student_num)]
-# matrix = [[j for j in range(5)] for i in range(5)]
-# matrix = [[j for j in range(course_num) if students_records[y]
-#     .append(int(input(f"Enter {lst_of_students_names[y]} "
-#                       f"score for {lst_of_courses[j]}: ")))] for y in range(student_num)]
-
-# lst_of_courses = [input(f"Enter name of subject {i + 1}: ") for i in range(0, course_num)]
-# students_records = [input(f"Enter scores of {i + 1}: ") for i in range(0, student_num)]
+    print(f"{lst_of_students_names[i].title():^8}", end="")
+    print(f"{' '.join(['{:^7d}'.format(x) for x in students_records[i]]):^6}", end="")
+    print(f"{calculate_students_results(students_records)[i]:^8}")
