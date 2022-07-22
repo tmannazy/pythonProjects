@@ -65,8 +65,8 @@ if __name__ == '__main__':
 # list_of_numbers = [2, 5, 6, 7, 9]
 #
 # num = 0
-# for item in list_of_numbers:
-#     num = num + item
+# for items in list_of_numbers:
+#     num = num + items
 # print(num)
 
 
